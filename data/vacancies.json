@@ -1,0 +1,392 @@
+[
+    {
+        "id": "103512278",
+        "premium": false,
+        "name": "Разработчик C++/Python в Центр Квантовых Технологий Сбера",
+        "department": {
+            "id": "3529-3529-prof",
+            "name": "Сбер для экспертов"
+        },
+        "has_test": false,
+        "response_letter_required": false,
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": null,
+        "type": {
+            "id": "open",
+            "name": "Открытая"
+        },
+        "address": null,
+        "response_url": null,
+        "sort_point_distance": null,
+        "published_at": "2024-07-08T14:49:01+0300",
+        "created_at": "2024-07-08T14:49:01+0300",
+        "archived": false,
+        "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=103512278",
+        "branding": {
+            "type": "MAKEUP",
+            "tariff": null
+        },
+        "show_logo_in_search": true,
+        "insider_interview": null,
+        "url": "https://api.hh.ru/vacancies/103512278?host=hh.ru",
+        "alternate_url": "https://hh.ru/vacancy/103512278",
+        "relations": [],
+        "employer": {
+            "id": "3529",
+            "name": "СБЕР",
+            "url": "https://api.hh.ru/employers/3529",
+            "alternate_url": "https://hh.ru/employer/3529",
+            "logo_urls": {
+                "240": "https://img.hhcdn.ru/employer-logo/5756157.png",
+                "90": "https://img.hhcdn.ru/employer-logo/5756156.png",
+                "original": "https://img.hhcdn.ru/employer-logo-original/1033849.png"
+            },
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=3529",
+            "accredited_it_employer": false,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Опыт промышленной разработки под С/С++ и Python от 3х лет. Работали с системами контроля версий. Уверенно читаете документацию...",
+            "responsibility": "Написание кода на C/C++ и <highlighttext>Pyhton</highlighttext> для управления и контроля квантового компьютера. Разработка первичной инфраструктуры CI/CD и автоматического..."
+        },
+        "contacts": null,
+        "schedule": {
+            "id": "fullDay",
+            "name": "Полный день"
+        },
+        "working_days": [],
+        "working_time_intervals": [],
+        "working_time_modes": [],
+        "accept_temporary": false,
+        "professional_roles": [
+            {
+                "id": "96",
+                "name": "Программист, разработчик"
+            }
+        ],
+        "accept_incomplete_resumes": false,
+        "experience": {
+            "id": "between3And6",
+            "name": "От 3 до 6 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "adv_response_url": null,
+        "is_adv_vacancy": false,
+        "adv_context": null
+    },
+    {
+        "id": "102283251",
+        "premium": false,
+        "name": "Разработчик Python",
+        "department": null,
+        "has_test": false,
+        "response_letter_required": false,
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": null,
+        "type": {
+            "id": "open",
+            "name": "Открытая"
+        },
+        "address": {
+            "city": null,
+            "street": null,
+            "building": null,
+            "lat": null,
+            "lng": null,
+            "description": null,
+            "raw": null,
+            "metro": {
+                "station_name": "Алексеевская",
+                "line_name": "Калужско-Рижская",
+                "station_id": "6.8",
+                "line_id": "6",
+                "lat": 55.807794,
+                "lng": 37.638699
+            },
+            "metro_stations": [
+                {
+                    "station_name": "Алексеевская",
+                    "line_name": "Калужско-Рижская",
+                    "station_id": "6.8",
+                    "line_id": "6",
+                    "lat": 55.807794,
+                    "lng": 37.638699
+                },
+                {
+                    "station_name": "ВДНХ",
+                    "line_name": "Калужско-Рижская",
+                    "station_id": "6.27",
+                    "line_id": "6",
+                    "lat": 55.819626,
+                    "lng": 37.640751
+                },
+                {
+                    "station_name": "Улица Академика Королёва",
+                    "line_name": "Монорельс",
+                    "station_id": "96.552",
+                    "line_id": "96",
+                    "lat": 55.821821,
+                    "lng": 37.627167
+                }
+            ],
+            "id": "5148286"
+        },
+        "response_url": null,
+        "sort_point_distance": null,
+        "published_at": "2024-06-19T14:37:38+0300",
+        "created_at": "2024-06-19T14:37:38+0300",
+        "archived": false,
+        "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=102283251",
+        "show_logo_in_search": null,
+        "insider_interview": {
+            "id": "32665",
+            "url": "https://hh.ru/interview/32665?employerId=9188"
+        },
+        "url": "https://api.hh.ru/vacancies/102283251?host=hh.ru",
+        "alternate_url": "https://hh.ru/vacancy/102283251",
+        "relations": [],
+        "employer": {
+            "id": "9188",
+            "name": "БФТ-Холдинг (Бюджетные и Финансовые Технологии)",
+            "url": "https://api.hh.ru/employers/9188",
+            "alternate_url": "https://hh.ru/employer/9188",
+            "logo_urls": {
+                "original": "https://img.hhcdn.ru/employer-logo-original/994193.png",
+                "90": "https://img.hhcdn.ru/employer-logo/5597568.png",
+                "240": "https://img.hhcdn.ru/employer-logo/5597569.png"
+            },
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=9188",
+            "accredited_it_employer": true,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Опыт разработки на <highlighttext>Pyhton</highlighttext> (3.6+) для ОС семейства Linux. Опыт разработки REST API веб-приложений на одном из...",
+            "responsibility": "Разработка, развитие прикладного программного обеспечения. Разработка компонентов информационной системы. Участие в проектах сопровождения и развития информационной системы и автоматизации бизнес..."
+        },
+        "contacts": null,
+        "schedule": {
+            "id": "remote",
+            "name": "Удаленная работа"
+        },
+        "working_days": [],
+        "working_time_intervals": [],
+        "working_time_modes": [],
+        "accept_temporary": false,
+        "professional_roles": [
+            {
+                "id": "96",
+                "name": "Программист, разработчик"
+            }
+        ],
+        "accept_incomplete_resumes": false,
+        "experience": {
+            "id": "between3And6",
+            "name": "От 3 до 6 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "adv_response_url": null,
+        "is_adv_vacancy": false,
+        "adv_context": null
+    },
+    {
+        "id": "103297335",
+        "premium": false,
+        "name": "Go / Pyhton разработчик (middle/senior)",
+        "department": null,
+        "has_test": false,
+        "response_letter_required": false,
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": {
+            "from": 300000,
+            "to": null,
+            "currency": "RUR",
+            "gross": false
+        },
+        "type": {
+            "id": "open",
+            "name": "Открытая"
+        },
+        "address": null,
+        "response_url": null,
+        "sort_point_distance": null,
+        "published_at": "2024-07-04T14:42:55+0300",
+        "created_at": "2024-07-04T14:42:55+0300",
+        "archived": false,
+        "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=103297335",
+        "show_logo_in_search": null,
+        "insider_interview": null,
+        "url": "https://api.hh.ru/vacancies/103297335?host=hh.ru",
+        "alternate_url": "https://hh.ru/vacancy/103297335",
+        "relations": [],
+        "employer": {
+            "id": "3544865",
+            "name": "ABCstaff",
+            "url": "https://api.hh.ru/employers/3544865",
+            "alternate_url": "https://hh.ru/employer/3544865",
+            "logo_urls": {
+                "90": "https://img.hhcdn.ru/employer-logo/3400345.jpeg",
+                "240": "https://img.hhcdn.ru/employer-logo/3400346.jpeg",
+                "original": "https://img.hhcdn.ru/employer-logo-original/739842.jpeg"
+            },
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=3544865",
+            "accredited_it_employer": false,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Опыт работы с Golang (от 3 лет). Опыт работы с Python (от 2 лет). Глубокое понимание принципов асинхронности, параллельности и...",
+            "responsibility": "DSP (Demand-Side Platform). SSP (Supply-Side Platform). DMP (Data Management Platform)."
+        },
+        "contacts": null,
+        "schedule": {
+            "id": "remote",
+            "name": "Удаленная работа"
+        },
+        "working_days": [],
+        "working_time_intervals": [],
+        "working_time_modes": [],
+        "accept_temporary": false,
+        "professional_roles": [
+            {
+                "id": "96",
+                "name": "Программист, разработчик"
+            }
+        ],
+        "accept_incomplete_resumes": false,
+        "experience": {
+            "id": "between3And6",
+            "name": "От 3 до 6 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "adv_response_url": null,
+        "is_adv_vacancy": false,
+        "adv_context": null
+    },
+    {
+        "id": "103237564",
+        "premium": false,
+        "name": "Middle DBA / Администратор баз данных Postgresql (гибрид)",
+        "department": null,
+        "has_test": true,
+        "response_letter_required": false,
+        "area": {
+            "id": "1",
+            "name": "Москва",
+            "url": "https://api.hh.ru/areas/1"
+        },
+        "salary": {
+            "from": 180000,
+            "to": 195000,
+            "currency": "RUR",
+            "gross": false
+        },
+        "type": {
+            "id": "open",
+            "name": "Открытая"
+        },
+        "address": {
+            "city": "Москва",
+            "street": "Замоскворецкая линия",
+            "building": "метро Технопарк",
+            "lat": 55.693931,
+            "lng": 37.66442,
+            "description": null,
+            "raw": "Москва, Замоскворецкая линия, метро Технопарк",
+            "metro": {
+                "station_name": "Технопарк",
+                "line_name": "Замоскворецкая",
+                "station_id": "2.512",
+                "line_id": "2",
+                "lat": 55.695,
+                "lng": 37.664167
+            },
+            "metro_stations": [
+                {
+                    "station_name": "Технопарк",
+                    "line_name": "Замоскворецкая",
+                    "station_id": "2.512",
+                    "line_id": "2",
+                    "lat": 55.695,
+                    "lng": 37.664167
+                }
+            ],
+            "id": "5782194"
+        },
+        "response_url": null,
+        "sort_point_distance": null,
+        "published_at": "2024-07-03T17:26:25+0300",
+        "created_at": "2024-07-03T17:26:25+0300",
+        "archived": false,
+        "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=103237564",
+        "show_logo_in_search": null,
+        "insider_interview": null,
+        "url": "https://api.hh.ru/vacancies/103237564?host=hh.ru",
+        "alternate_url": "https://hh.ru/vacancy/103237564",
+        "relations": [],
+        "employer": {
+            "id": "4305039",
+            "name": "Outlines Technologies",
+            "url": "https://api.hh.ru/employers/4305039",
+            "alternate_url": "https://hh.ru/employer/4305039",
+            "logo_urls": {
+                "original": "https://img.hhcdn.ru/employer-logo-original/684091.png",
+                "240": "https://img.hhcdn.ru/employer-logo/3177497.png",
+                "90": "https://img.hhcdn.ru/employer-logo/3177496.png"
+            },
+            "vacancies_url": "https://api.hh.ru/vacancies?employer_id=4305039",
+            "accredited_it_employer": true,
+            "trusted": true
+        },
+        "snippet": {
+            "requirement": "Необходимые навыки: Опыт администрирования БД Postgre SQL. Знание UNIX-подобных систем на уровне администратора. Приветсвуется опыт работы со стеком продуктов...",
+            "responsibility": "Ваша зона ответственности: Сопровождение серверов и СУБД Postgre SQL. Написание и поддержка скриптов shell, <highlighttext>pyhton</highlighttext>, ansible. Поддержка промышленных информационных систем..."
+        },
+        "contacts": null,
+        "schedule": {
+            "id": "fullDay",
+            "name": "Полный день"
+        },
+        "working_days": [],
+        "working_time_intervals": [],
+        "working_time_modes": [],
+        "accept_temporary": false,
+        "professional_roles": [
+            {
+                "id": "113",
+                "name": "Системный администратор"
+            }
+        ],
+        "accept_incomplete_resumes": false,
+        "experience": {
+            "id": "between1And3",
+            "name": "От 1 года до 3 лет"
+        },
+        "employment": {
+            "id": "full",
+            "name": "Полная занятость"
+        },
+        "adv_response_url": null,
+        "is_adv_vacancy": false,
+        "adv_context": null
+    }
+]
