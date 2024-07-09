@@ -19,4 +19,4 @@ class JobVacancy:
         )
 
     def __repr__(self):
-        return f"Vacancy({self.name}, {self.salary}, {self.url}, {self.description})"
+        return f"{JobVacancy.__name__}({self.name}, {self.salary}, {self.url}, {self.description})"
