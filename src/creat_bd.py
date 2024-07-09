@@ -1,11 +1,11 @@
 import json
 from abc import ABC, abstractmethod
-import os.path
+
 
 class FileWork(ABC):
 
     @abstractmethod
-    def road_file(self):
+    def read_file(self):
         pass
 
     @abstractmethod
@@ -13,18 +13,26 @@ class FileWork(ABC):
         pass
 
 
-
 class WorkWithJson(FileWork):
 
-    def __init__(self):
-        self.abs_path = os.path.abspath("data/vacancies.json")
-
     def read_file(self):
-        with open(self.abs_path, "r", encoding="utf-8") as file:
+        with open("data/vacancies.json", "r", encoding="utf-8") as file:
             return json.load(file)
 
     def save_file(self, data):
-        with open(self.abs_path, "w", encoding="utf-8") as file:
-            """res = json.load(file)
-            res.append(data)"""
+        with open("data/vacancies.json", "w", encoding="utf-8") as file:
             json.dump(data, file,  ensure_ascii=False, indent=4)
+
+    @staticmethod
+    def get_data(criterion):
+        """Метод получения данных из файла по указанным критериям"""
+        criterion_vac = []
+        with open("data/vacancies.json", "r", encoding="utf8") as file:
+            vacancies = json.load(file)
+            for vac in vacancies:
+                if not vac["snippet"]["requirement"]:
+                    continue
+                else:
+                    if criterion in vac["snippet"]["requirement"]:
+                        criterion_vac.append(vac)
+        return criterion_vac
