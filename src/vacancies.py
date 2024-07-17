@@ -7,7 +7,6 @@ class JobVacancy:
         self.url = url
         self.requirement = requirement
 
-
     def __str__(self):
         return (
             f"Название: {self.name}\n"

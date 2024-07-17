@@ -3,7 +3,6 @@ from src.parser import CB
 import json
 
 
-
 def vac_user():
     """Приводит полученные данные к данным для вывода"""
     with open("data/vacancies.json", "r", encoding="utf8") as f:
@@ -41,7 +40,7 @@ def sorting(vacancies: object, n: int) -> object:
                 currency = vac["salary"]["currency"]
                 vac["salary"]["from"] = round(vac["salary"]["from"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
                 vac["salary"]["to"] = round(vac["salary"]["to"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
-                vac["salary"]["currency"] = (f"RUR, выплата в {currency}")
+                vac["salary"]["currency"] = f"RUR, выплата в {currency}"
 
             sort_vac.append(JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement']))
         except TypeError as e:
