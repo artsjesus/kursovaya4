@@ -1,10 +1,11 @@
+import json
 import requests
 from abc import ABC, abstractmethod
 
 
 class Parser(ABC):
     @abstractmethod
-    def load_vacancies(self, keyword):
+    def load_vacancies(self, **kwargs):
         pass
 
 
@@ -16,13 +17,34 @@ class HH(Parser):
 
     def __init__(self, keyword):
         self.url = 'https://api.hh.ru/vacancies'
-        self.headers = {'User-Agent': 'HH-User-Agent'}
+        self.__headers = {'User-Agent': 'HH-User-Agent'}
         self.params = {'text': keyword, 'page': 0, 'per_page': 100}
         self.vacancies = []
 
     def load_vacancies(self, **kwargs):
         while self.params.get('page') != 20:
-            response = requests.get(self.url, headers=self.headers, params=self.params)
+            response = requests.get(self.url, headers=self.__headers, params=self.params)
             vacancies = response.json()['items']
             self.vacancies.extend(vacancies)
             self.params['page'] += 1
+
+    @property
+    def connect(self):
+        return requests.get(self.url).status_code
+
+
+class CB(Parser):
+    def __init__(self):
+        self.__url = "https://www.cbr-xml-daily.ru/daily_json.js"
+        self.kurs = dict
+
+    def load_vacancies(self, **kwargs):
+        response = requests.get(self.__url)
+        self.kurs = response.json()['Valute']
+
+    @property
+    def show_kurs(self):
+        return self.kurs
+
+    def __str__(self):
+        return f"{CB.__class__.__name__}({self.kurs})"
