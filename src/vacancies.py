@@ -7,6 +7,7 @@ class JobVacancy:
         self.url = url
         self.requirement = requirement
 
+
     def __str__(self):
         return (
             f"Название: {self.name}\n"
@@ -16,7 +17,7 @@ class JobVacancy:
         )
 
     def __repr__(self):
-        return f"Vacancy({self.name}, {self.salary}, {self.url}, {self.requirement})"
+        return f"{JobVacancy.__class__.__name__}({self.name}, {self.salary}, {self.url}, {self.requirement})"
 
     def __gt__(self, other):
         return self.salary['to'] > other.salary['to']

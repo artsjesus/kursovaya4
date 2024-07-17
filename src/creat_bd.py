@@ -6,10 +6,17 @@ class FileWork(ABC):
 
     @abstractmethod
     def read_file(self):
+        """чтение файла"""
         pass
 
     @abstractmethod
     def save_file(self):
+        """сохранения файла"""
+        pass
+
+    @abstractmethod
+    def del_file(self):
+        """удаление"""
         pass
 
 
@@ -22,6 +29,10 @@ class WorkWithJson(FileWork):
     def save_file(self, data):
         with open("data/vacancies.json", "w", encoding="utf-8") as file:
             json.dump(data, file,  ensure_ascii=False, indent=4)
+
+    def del_file(self):
+        with open("data/vacancies.json", "w") as file:
+            pass
 
     @staticmethod
     def get_data(criterion):
