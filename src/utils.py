@@ -1,10 +1,11 @@
 from src.vacancies import JobVacancy
+from src.parser import CB
 import json
+
 
 
 def vac_user():
     """Приводит полученные данные к данным для вывода"""
-
     with open("data/vacancies.json", "r", encoding="utf8") as f:
         vacancies = json.load(f)
     user_vac = []
@@ -29,11 +30,19 @@ def vac_user():
     return user_vac
 
 
-def sorting(vacancies, n: int):
+def sorting(vacancies: object, n: int) -> object:
+    """сортировка N вакансий"""
     sort_vac = []
+    cb = CB()
+    cb.load_vacancies()
     for vac in vacancies:
         try:
-            pass
+            if vac["salary"]["currency"] != "RUR" and vac["salary"]["currency"] != "" and vac["salary"]["currency"] != "BYR":
+                currency = vac["salary"]["currency"]
+                vac["salary"]["from"] = round(vac["salary"]["from"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
+                vac["salary"]["to"] = round(vac["salary"]["to"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
+                vac["salary"]["currency"] = (f"RUR, выплата в {currency}")
+
             sort_vac.append(JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement']))
         except TypeError as e:
             print(f"Ошибка при обработке вакансии: {vac}")
