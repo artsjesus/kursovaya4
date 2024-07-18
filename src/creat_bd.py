@@ -10,7 +10,7 @@ class FileWork(ABC):
         pass
 
     @abstractmethod
-    def save_file(self):
+    def save_file(self, datae):
         """сохранения файла"""
         pass
 
@@ -21,24 +21,27 @@ class FileWork(ABC):
 
 
 class WorkWithJson(FileWork):
+    def __init__(self, file_name):
+        self.file_name = file_name
 
     def read_file(self):
-        with open("data/vacancies.json", "r", encoding="utf-8") as file:
+        with open(f"data/{self.file_name}", "r", encoding="utf-8") as file:
             return json.load(file)
 
     def save_file(self, data):
-        with open("data/vacancies.json", "w", encoding="utf-8") as file:
-            json.dump(data, file,  ensure_ascii=False, indent=4)
+        """Добавляет новые данные в JSON файл."""
+        data.extend(data)
+        with open(f"data/{self.file_name}", 'w', encoding='utf-8') as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
 
     def del_file(self):
-        with open("data/vacancies.json", "w") as file:
+        with open(f"data/{self.file_name}", "w") as file:
             pass
 
-    @staticmethod
-    def get_data(criterion):
+    def get_data(self, criterion):
         """Метод получения данных из файла по указанным критериям"""
         criterion_vac = []
-        with open("data/vacancies.json", "r", encoding="utf8") as file:
+        with open(f"data/{self.file_name}", "r", encoding="utf8") as file:
             vacancies = json.load(file)
             for vac in vacancies:
                 if not vac["snippet"]["requirement"]:

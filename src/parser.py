@@ -21,7 +21,7 @@ class HH(Parser):
         self.vacancies = []
 
     def load_vacancies(self, **kwargs):
-        while self.params.get('page') != 20:
+        while self.params.get('page') != 5:
             response = requests.get(self.url, headers=self.__headers, params=self.params)
             vacancies = response.json()['items']
             self.vacancies.extend(vacancies)
