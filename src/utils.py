@@ -3,9 +3,9 @@ from src.parser import CB
 import json
 
 
-def vac_user():
+def vac_user(file_name):
     """Приводит полученные данные к данным для вывода"""
-    with open("data/vacancies.json", "r", encoding="utf8") as f:
+    with open(f"data/{file_name}", "r", encoding="utf8") as f:
         vacancies = json.load(f)
     user_vac = []
     for vac in vacancies:
