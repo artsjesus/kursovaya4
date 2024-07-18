@@ -14,7 +14,7 @@ class HH(Parser):
     Класс Parser является родительским классом, который вам необходимо реализовать
     """
 
-    def __init__(self, keyword):
+    def __init__(self, keyword: str):
         self.url = 'https://api.hh.ru/vacancies'
         self.__headers = {'User-Agent': 'HH-User-Agent'}
         self.params = {'text': keyword, 'page': 0, 'per_page': 100}
@@ -42,7 +42,7 @@ class CB(Parser):
         self.Exchange = response.json()['Valute']
 
     @property
-    def show_kurs(self):
+    def show_exchange(self):
         return self.Exchange
 
     def __str__(self):
