@@ -29,7 +29,7 @@ def vac_user(file_name):
     return user_vac
 
 
-def sorting(vacancies: object, n: int) -> object:
+def sorting(vacancies, n: int):
     """Сортировка N вакансий"""
     sort_vac = []
     cb = CB()
