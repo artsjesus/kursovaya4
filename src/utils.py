@@ -30,7 +30,7 @@ def vac_user():
 
 
 def sorting(vacancies: object, n: int) -> object:
-    """сортировка N вакансий"""
+    """Сортировка N вакансий"""
     sort_vac = []
     cb = CB()
     cb.load_vacancies()
