@@ -30,7 +30,7 @@ def vac_user():
 
 
 def sorting(vacancies: object, n: int) -> object:
-    """сортировка N вакансий"""
+    """Сортировка N вакансий"""
     sort_vac = []
     cb = CB()
     cb.load_vacancies()
@@ -38,8 +38,8 @@ def sorting(vacancies: object, n: int) -> object:
         try:
             if vac["salary"]["currency"] != "RUR" and vac["salary"]["currency"] != "" and vac["salary"]["currency"] != "BYR":
                 currency = vac["salary"]["currency"]
-                vac["salary"]["from"] = round(vac["salary"]["from"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
-                vac["salary"]["to"] = round(vac["salary"]["to"] * cb.kurs[currency]["Value"] / cb.kurs[currency]["Nominal"])
+                vac["salary"]["from"] = round(vac["salary"]["from"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
+                vac["salary"]["to"] = round(vac["salary"]["to"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
                 vac["salary"]["currency"] = f"RUR, выплата в {currency}"
 
             sort_vac.append(JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement']))
