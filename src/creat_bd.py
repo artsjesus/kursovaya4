@@ -30,7 +30,6 @@ class WorkWithJson(FileWork):
 
     def save_file(self, data):
         """Добавляет новые данные в JSON файл."""
-        data.extend(data)
         with open(f"data/{self.file_name}", 'w', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
