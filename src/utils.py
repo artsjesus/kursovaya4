@@ -50,5 +50,6 @@ def sorting(vacancies, n: int):
             print(f"Ошибка при обработке вакансии: {vac}")
             print(e)
             continue
-    sort_vac = sorted(sort_vac, key=lambda x: x.salary["to"], reverse=True)
+    #sort_vac = sorted(sort_vac["to"])
+    sort_vac = sorted(sort_vac, reverse=True)
     return sort_vac[:n]
