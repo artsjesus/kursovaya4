@@ -1,14 +1,14 @@
 from src.vacancies import JobVacancy
+from src.creat_bd import WorkWithJson
 from src.parser import CB
-import json
+
 
 
 def vac_user(file_name):
     """Приводит полученные данные к данным для вывода"""
-    with open(f"data/{file_name}", "r", encoding="utf8") as f:
-        vacancies = json.load(f)
+    vacancies = WorkWithJson(file_name)
     user_vac = []
-    for vac in vacancies:
+    for vac in vacancies.read_file():
         if not vac.get("salary"):
             vac["salary"] = {"from": 0, "to": 0, "currency": ""}
         else:
@@ -36,17 +36,19 @@ def sorting(vacancies, n: int):
     cb.load_vacancies()
     for vac in vacancies:
         try:
-            if vac["salary"]["currency"] != "RUR" and vac["salary"]["currency"] != "" and vac["salary"]["currency"] != "BYR":
+            if vac["salary"]["currency"] != "RUR" and vac["salary"]["currency"] != "" and "BYR" != vac["salary"][
+                "currency"]:
                 currency = vac["salary"]["currency"]
-                vac["salary"]["from"] = round(vac["salary"]["from"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
-                vac["salary"]["to"] = round(vac["salary"]["to"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
+                vac["salary"]["from"] = round(
+                    vac["salary"]["from"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
+                vac["salary"]["to"] = round(
+                    vac["salary"]["to"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
                 vac["salary"]["currency"] = f"RUR, выплата в {currency}"
-
             sort_vac.append(JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement']))
+
         except TypeError as e:
             print(f"Ошибка при обработке вакансии: {vac}")
             print(e)
             continue
-
-    sorted_vacancies = sorted(sort_vac, key=lambda x: x.salary["to"], reverse=True)
-    return sorted_vacancies[:n]
+    sort_vac = sorted(sort_vac, key=lambda x: x.salary["to"], reverse=True)
+    return sort_vac[:n]

@@ -1,4 +1,4 @@
-from src.parser import HH
+from src.parser import HH, CB
 from src.utils import vac_user, sorting
 from src.creat_bd import WorkWithJson
 
