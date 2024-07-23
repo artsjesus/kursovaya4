@@ -1,5 +1,5 @@
-from src.parser import HH, CB
-from src.utils import vac_user, sorting
+from src.parser import HH
+from src.utils import sorting, creat_class
 from src.creat_bd import WorkWithJson
 
 
@@ -15,12 +15,11 @@ def main():
         fv = WorkWithJson(file_name)
         fv.save_file(vacancies)
         name_criterion = input('Введите критерий для отбора вакансий: \n')
-        fv.get_data(name_criterion)
-        processed_vacancies = vac_user(file_name)
         n = input('Введите количество вакансий для просмотра: \n')
-        top_vacancies = sorting(processed_vacancies, int(n))
-        for vac in top_vacancies:
-            print(vac)
+        vac = creat_class(file_name)
+        top_vacancies = sorting(vac, name_criterion, int(n))
+        for top_vacancy in top_vacancies:
+            print(top_vacancy)
         delete = input("Удалить список вакансий?(Y/N)").upper()
         if delete == "Y":
             fv.del_file()
