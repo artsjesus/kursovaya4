@@ -5,18 +5,18 @@ from src.parser import CB
 
 def creat_class(file_name):
     """Создание классов"""
-    y = []
+    list_vacancies = []
     cb = CB()
     cb.load_vacancies()
     vacancies = WorkWithJson(file_name)
     for vac in vacancies.read_file():
         if not vac["salary"]:
             vac["salary"] = {"from": 0, "to": 0, "currency": ""}
-        x = JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement'])
-        x.validation()
-        x.well(cb)
-        y.append(x)
-    return y
+        vacancy = JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement'])
+        vacancy.validation()
+        vacancy.well(cb)
+        list_vacancies.append(vacancy)
+    return list_vacancies
 
 
 def sorting(vacancies, criterion, n: int):
