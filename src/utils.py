@@ -4,7 +4,7 @@ from src.parser import CB
 
 
 def creat_class(file_name):
-    """Создание классов"""
+    """Создание класса"""
     list_vacancies = []
     cb = CB()
     cb.load_vacancies()
@@ -13,7 +13,6 @@ def creat_class(file_name):
         if not vac["salary"]:
             vac["salary"] = {"from": 0, "to": 0, "currency": ""}
         vacancy = JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement'])
-        vacancy.validation()
         vacancy.well(cb)
         list_vacancies.append(vacancy)
     return list_vacancies
