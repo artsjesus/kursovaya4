@@ -1,52 +1,31 @@
 from src.vacancies import JobVacancy
+from src.creat_bd import WorkWithJson
 from src.parser import CB
-import json
 
 
-def vac_user(file_name):
-    """Приводит полученные данные к данным для вывода"""
-    with open(f"data/{file_name}", "r", encoding="utf8") as f:
-        vacancies = json.load(f)
-    user_vac = []
-    for vac in vacancies:
-        if not vac.get("salary"):
-            vac["salary"] = {"from": 0, "to": 0, "currency": ""}
-        else:
-            if vac["salary"] is None or not isinstance(vac["salary"], dict):
-                vac["salary"] = {"from": 0, "to": 0, "currency": ""}
-            else:
-                if vac["salary"]["currency"] is None:
-                    vac["salary"]["currency"] = "Валюта не определена"
-
-                if vac["salary"]["from"] is None:
-                    vac["salary"]["from"] = 0
-                if vac["salary"]["to"] is None:
-                    vac["salary"]["to"] = 0
-
-        vac["snippet"]["requirement"] = vac["snippet"].get("requirement", "Информация отсутствует")
-        user_vac.append(vac)
-
-    return user_vac
-
-
-def sorting(vacancies, n: int):
-    """Сортировка N вакансий"""
-    sort_vac = []
+def creat_class(file_name):
+    """Создание класса"""
+    list_vacancies = []
     cb = CB()
     cb.load_vacancies()
+    vacancies = WorkWithJson(file_name)
+    for vac in vacancies.read_file():
+        if not vac["salary"]:
+            vac["salary"] = {"from": 0, "to": 0, "currency": ""}
+        vacancy = JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement'])
+        vacancy.well(cb)
+        list_vacancies.append(vacancy)
+    return list_vacancies
+
+
+def sorting(vacancies, criterion, n: int):
+    """Сортировка N вакансий и поиск по ключевым словам"""
+    criterion_vacancies = []
     for vac in vacancies:
-        try:
-            if vac["salary"]["currency"] != "RUR" and vac["salary"]["currency"] != "" and vac["salary"]["currency"] != "BYR":
-                currency = vac["salary"]["currency"]
-                vac["salary"]["from"] = round(vac["salary"]["from"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
-                vac["salary"]["to"] = round(vac["salary"]["to"] * cb.Exchange[currency]["Value"] / cb.Exchange[currency]["Nominal"])
-                vac["salary"]["currency"] = f"RUR, выплата в {currency}"
-
-            sort_vac.append(JobVacancy(vac['name'], vac['salary'], vac['url'], vac["snippet"]['requirement']))
-        except TypeError as e:
-            print(f"Ошибка при обработке вакансии: {vac}")
-            print(e)
+        if not vac.requirement:
             continue
-
-    sorted_vacancies = sorted(sort_vac, key=lambda x: x.salary["to"], reverse=True)
-    return sorted_vacancies[:n]
+        else:
+            if criterion in vac.requirement:
+                criterion_vacancies.append(vac)
+    criterion_vacancies = sorted(vacancies, reverse=True)
+    return criterion_vacancies[:n]
