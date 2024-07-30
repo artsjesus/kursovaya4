@@ -30,8 +30,14 @@ class WorkWithJson(FileWork):
 
     def save_file(self, data):
         """Добавляет новые данные в JSON файл."""
+        vacancy = []
+        try:
+            vacancy.extend(self.read_file())
+        except json.decoder.JSONDecodeError as err:
+            pass
+        vacancy.extend(data)
         with open(f"data/{self.file_name}", 'w', encoding='utf-8') as file:
-            json.dump(data, file, ensure_ascii=False, indent=4)
+            json.dump(vacancy, file, ensure_ascii=False, indent=4)
 
     def del_file(self):
         with open(f"data/{self.file_name}", "w") as file:
